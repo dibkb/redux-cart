@@ -7,13 +7,13 @@ function App() {
   return (
     <>
       <Header />
-      <body className="container mx-auto">
+      <main className="container mx-auto">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />} />
           <Route path="/cart" element={<Cart />} />
         </Routes>
-      </body>
+      </main>
     </>
   );
 }
