@@ -5,7 +5,6 @@ const initialState: ProductsState = {
   products: [],
   status: "IDLE",
 };
-
 const productSlice = createSlice({
   name: "products",
   initialState,
@@ -15,7 +14,7 @@ const productSlice = createSlice({
       state.status = "LOADING";
     });
     builder.addCase(fetchProducts.fulfilled, (state, action) => {
-      state.products = state.products.concat(action.payload);
+      state.products = action.payload;
       state.status = "SUCCEEDED";
     });
     builder.addCase(fetchProducts.rejected, (state, action) => {
@@ -26,7 +25,7 @@ const productSlice = createSlice({
 
 export default productSlice.reducer;
 type status = "IDLE" | "LOADING" | "SUCCEEDED" | "FAILED";
-export type Product = {
+export type ProductType = {
   title: string;
   category: string;
   description: string;
@@ -39,6 +38,6 @@ export type Product = {
   };
 };
 export interface ProductsState {
-  products: Product[];
+  products: ProductType[];
   status: status;
 }
