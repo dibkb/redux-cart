@@ -1,6 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-const POSTS_URL = "https://fakestoreapi.com/products";
-
+const POSTS_URL = "https://api.escuelajs.co/api/v1/categories/3/products";
 export const fetchProducts = createAsyncThunk(
   "products/fetchProducts",
   async () => {

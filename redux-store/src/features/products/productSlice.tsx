@@ -26,16 +26,16 @@ const productSlice = createSlice({
 export default productSlice.reducer;
 type status = "IDLE" | "LOADING" | "SUCCEEDED" | "FAILED";
 export type ProductType = {
-  title: string;
-  category: string;
-  description: string;
   id: number;
-  image: string;
+  title: string;
+  description: string;
   price: number;
-  rating: {
-    rate: number;
-    count: number;
+  category: {
+    id: number;
+    name: string;
+    image: string;
   };
+  images: string[];
 };
 export interface ProductsState {
   products: ProductType[];

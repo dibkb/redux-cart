@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import ProductContainer from "../components/ProductContainer";
 import { useAppSelector, useAppDispatch } from "../features/hooks";
 import { fetchProducts } from "../features/products/asyncThunk";
-const Products = () => {
+const Products: React.FC = () => {
   const dispatch = useAppDispatch();
   const status = useAppSelector((state) => state.products.status);
   const products = useAppSelector((state) => state.products.products);
